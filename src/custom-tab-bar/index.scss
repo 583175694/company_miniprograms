@@ -1,0 +1,44 @@
+.bottom-tab {
+  position: fixed;
+  display: flex;
+  width: 100%;
+  height: 80PX;
+  background: transparent;
+  border-top: 1px solid rgba(255, 255, 255, .1);
+  bottom: 0;
+  z-index: -1;
+
+  &-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-img {
+      margin: 5PX auto 0;
+      width: 30PX;
+      height: 30PX;
+      position: relative;
+      overflow: visible;
+    }
+
+    .active::before {
+      content: '';
+      width: 20PX;
+      height: 3PX;
+      background-color: #EA3343;
+      position: absolute;
+      top: -4PX;
+      left: 5PX;
+    }
+
+    &-text {
+      height: 14PX;
+      line-height: 14PX;
+      font-size: 10PX;
+      font-family: PingFangSC-Light, PingFang SC;
+      font-weight: 300;
+      color: rgba(68, 68, 68, 1);
+    }
+  }
+}

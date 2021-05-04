@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon_like</title>
+    <defs>
+        <path d="M25.5596731,13.963624 L33.2269276,13.963624 C34.2809084,13.9635749 35.2870652,14.403497 36.0027044,15.1772773 C36.7183435,15.9510577 37.0784935,16.9884463 36.996283,18.0392159 L35.9547009,31.3718457 C35.8008076,33.3388272 34.1602281,34.8567543 32.1872358,34.8576488 L15.3536802,34.8671005 C14.3096694,34.8671005 13.4633312,34.0207625 13.4633312,32.9767518 L13.4633312,15.8539728 C13.4629873,15.1344302 13.8711701,14.4770873 14.5162557,14.15833 L19.8262453,4.95989294 C20.3033016,4.13329842 21.3216731,3.79194936 22.2005234,4.16405612 L23.7449383,4.81811678 C25.5547894,5.58575233 26.6067101,7.48982257 26.2931284,9.43056773 L25.5615634,13.963624 L25.5596731,13.963624 Z M4.89816125,13.963624 L8.95674001,13.963624 C10.0007508,13.963624 10.8470888,14.809962 10.8470888,15.8539728 L10.8470888,32.9767518 C10.8470888,34.0207625 10.0007508,34.8671005 8.95674001,34.8671005 L4.89816125,34.8671005 C3.85415046,34.8671005 3.0078125,34.0207625 3.0078125,32.9767518 L3.0078125,15.8539728 C3.0078125,14.809962 3.85415046,13.963624 4.89816125,13.963624 Z" id="path-1"></path>
+        <filter x="-8.8%" y="-9.7%" width="117.6%" height="119.4%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.0668253807   0 0 0 0 0.0789634513   0 0 0 0 0.119423687  0 0 0 0.3 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="icon_like" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="形状">
+            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+            <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,126 @@
+page {
+  width: 100%;
+  height: 100%;
+}
+
+.index {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  .video-wrap {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    .video {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0px;
+      left: 0;
+      z-index: -1;
+    }
+
+    .operation {
+      position: absolute;
+      bottom: 206px;
+      right: 44px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 100;
+
+      .operation-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 38px;
+
+        image {
+          width: 80px;
+          height: 80px;
+          margin-bottom: 8px;
+        }
+
+        text {
+          font-size: 24px;
+          color: #FFFFFF;
+          font-weight: 600;
+        }
+      }
+
+      .avatar {
+        position: relative;
+
+        image {
+          width: 96px;
+          height: 96px;
+          border-radius: 50%;
+        }
+
+        .follow {
+          position: absolute;
+          bottom: -16px;
+          background: #EA3343;
+          border-radius: 20px;
+          width: 96px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          text {
+            font-size: 24px;
+            color: #FFFFFF;
+            letter-spacing: 0;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+
+  .swiper-type {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .top-nav {
+    position: absolute;
+    top: 102px;
+    display: flex;
+    align-items: center;
+    z-index: 100;
+
+    image {
+      width: 36px;
+      height: 36px;
+      margin-left: 38px;
+      margin-right: 148px;
+    }
+
+    .top-nav-item {
+      font-size: 37px;
+      color: #FFFFFF;
+      text-align: center;
+      text-shadow: 0 0 4px rgba(17, 20, 30, 0.30);
+      margin-right: 48px;
+
+      &:last-of-type {
+        margin: 0;
+      }
+    }
+  }
+}
