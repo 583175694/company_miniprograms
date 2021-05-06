@@ -2,6 +2,7 @@ page {
   width: 100%;
   height: 100%;
   background-color: #171A24;
+  overflow: hidden;
 }
 
 .welfare {
@@ -32,6 +33,16 @@ page {
   }
 }
 
+.c-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  position: absolute;
+  left: 328px;
+  top: 196px;
+  z-index: 9;
+}
+
 .container {
   width: 100%;
   height: 100%;
@@ -43,15 +54,8 @@ page {
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  .c-avatar {
-    width: 96px;
-    height: 96px;
-    border-radius: 50%;
-    position: absolute;
-    left: 328px;
-    top: -48px;
-  }
+  justify-content: flex-start;
+  overflow-y: scroll;
 
   .c-name {
     font-size: 32px;
@@ -65,10 +69,11 @@ page {
     display: flex;
     align-items: center;
     width: 670px;
-    height: 200px;
+    padding: 12px 0;
     background: #2A2F3E;
     border-radius: 40px;
     margin-bottom: 40px;
+    flex-shrink: 0;
 
     .w-avatar {
       border-radius: 40px;
@@ -116,5 +121,71 @@ page {
         color: #FFFFFF;
       }
     }
+  }
+
+  .welfare-item-first {
+    opacity: 0.76;
+    border-radius: 40px;
+    width: 670px;
+    height: 296px;
+    margin-bottom: 40px;
+    background-size: cover;
+    background-position: bottom;
+    position: relative;
+    flex-shrink: 0;
+
+    .mask {
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(180deg, rgba(42, 47, 62, 0.00) 0%, #2A2F3E 81%);
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 36px;
+    }
+
+    .title {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      position: absolute;
+      bottom: 34px;
+      left: 40px;
+
+      text {
+        color: #FFFFFF;
+
+        &:first-of-type {
+          font-size: 28px;
+          font-weight: 600;
+          margin-bottom: 8px;
+        }
+
+        &:last-of-type {
+          font-size: 24px;
+          opacity: .6;
+        }
+      }
+
+    }
+
+    .receive {
+      position: absolute;
+      right: 44px;
+      bottom: 48px;
+
+      text {
+        width: 120px;
+        height: 56px;
+        border-radius: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #EA3343;
+        font-size: 28px;
+        color: #FFFFFF;
+      }
+    }
+
   }
 }

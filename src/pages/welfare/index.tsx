@@ -49,6 +49,18 @@ class Welfare extends Component<IProps> {
         title: 'Apple 中国官方',
         subtitle: 'Apple 中国官方',
         url: url5
+      }, {
+        title: 'Apple 中国官方',
+        subtitle: 'Apple 中国官方',
+        url: url3
+      }, {
+        title: 'Apple 中国官方',
+        subtitle: 'Apple 中国官方',
+        url: url4
+      }, {
+        title: 'Apple 中国官方',
+        subtitle: 'Apple 中国官方',
+        url: url5
       }]
     }
 
@@ -57,7 +69,7 @@ class Welfare extends Component<IProps> {
       const query = Taro.createSelectorQuery()
       query.selectViewport().scrollOffset().exec(function(res){
         that.setState({
-          containerHeight: res[0].scrollHeight - 158 + 'px'
+          containerHeight: res[0].scrollHeight - 122 + 'px'
         })
       })
     }
@@ -69,11 +81,24 @@ class Welfare extends Component<IProps> {
           <View className="banner">
             <View className="mask"></View>
           </View>
+          <Image className="c-avatar" src={avatar}></Image>
           <View className="container" style={{'height': containerHeight}}>
-            <Image className="c-avatar" src={avatar}></Image>
             <Text className="c-name">Apple 中国官方</Text>
             {list && list.map((res: any, index: number) => {
               return (
+                index === 0 ?
+                // 第一条数据
+                <View className="welfare-item-first" style={{'backgroundImage': `url(${res.url})`}}>
+                  <View className="mask"></View>
+                  <View className="title">
+                    <Text>{res.title}</Text>
+                    <Text>{res.subtitle}</Text>
+                  </View>
+                  <View className="receive">
+                    <Text>领取</Text>
+                  </View>
+                </View> :
+                // 其他数据
                 <View className="welfare-item">
                   <Image className="w-avatar" src={res.url}></Image>
                   <View className="title">
