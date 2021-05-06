@@ -1,0 +1,120 @@
+page {
+  width: 100%;
+  height: 100%;
+  background-color: #171A24;
+}
+
+.welfare {
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.banner {
+  width: 100%;
+  height: 316px;
+  background-image: url('../../assets/iPhone12-2.png');
+  background-size: cover;
+  background-position: bottom;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  .mask {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba($color: #000000, $alpha: .5);
+  }
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  background-color: #171A24;
+  position: absolute;
+  top: 244px;
+  left: 0;
+  border-radius: 40px 40px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .c-avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    position: absolute;
+    left: 328px;
+    top: -48px;
+  }
+
+  .c-name {
+    font-size: 32px;
+    color: #FFFFFF;
+    font-weight: 600;
+    margin-top: 80px;
+    margin-bottom: 48px;
+  }
+
+  .welfare-item {
+    display: flex;
+    align-items: center;
+    width: 670px;
+    height: 200px;
+    background: #2A2F3E;
+    border-radius: 40px;
+    margin-bottom: 40px;
+
+    .w-avatar {
+      border-radius: 40px;
+      width: 180px;
+      height: 176px;
+      margin-left: 12.5px;
+    }
+
+    .title {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      margin-left: 26px;
+
+      text {
+        color: #FFFFFF;
+
+        &:first-of-type {
+          font-size: 28px;
+          font-weight: 600;
+          margin-bottom: 16px;
+        }
+
+        &:last-of-type {
+          font-size: 24px;
+        }
+      }
+    }
+
+    .receive {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      margin-right: 44px;
+
+      text {
+        width: 120px;
+        height: 56px;
+        border-radius: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #EA3343;
+        font-size: 28px;
+        color: #FFFFFF;
+      }
+    }
+  }
+}

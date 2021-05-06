@@ -2,7 +2,8 @@ export default {
   pages: [
     "pages/index/index",
     "pages/template/index",
-    "pages/my/index"
+    "pages/my/index",
+    "pages/welfare/index",
   ],
   window: {
     backgroundTextStyle: "light",

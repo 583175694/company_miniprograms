@@ -42,5 +42,24 @@
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
   "libVersion": "2.14.4",
-  "condition": {}
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/welfare/index",
+          "pathName": "pages/welfare/index",
+          "scene": null
+        }
+      ]
+    }
+  }
 }

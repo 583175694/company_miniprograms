@@ -88,11 +88,11 @@ class Index extends Component<IProps> {
   onShowDrawer() {
     const { currentStatu } = this.state
 
-    this.props.getTabbarState({tabbarState: currentStatu === 'open' ? -1 : 0})
     this.setState(() => ({
       currentStatu: currentStatu === 'open' ? 'close' : 'open'
     }), () => {
       this.util(this.state.currentStatu)
+      this.props.getTabbarState({tabbarState: this.state.currentStatu === 'open' ? -1 : 0})
     })
   }
 
