@@ -38,6 +38,7 @@ type IProps = StateProps & DispatchProps & PageOwnProps
 
 class Index extends Component<IProps> {
   state: State = {
+    // 视频列表
     videoSrc:
       "https://pressure-1255704943.cos.ap-shanghai.myqcloud.com/prod/download/VideoBackForth3.mp4",
     list: [
@@ -52,22 +53,29 @@ class Index extends Component<IProps> {
       "https://pressure-1255704943.cos.ap-shanghai.myqcloud.com/prod/download/VideoBackForth3.mp4",
       "https://pressure-1255704943.cos.ap-shanghai.myqcloud.com/prod/download/gaitVideoExample.mp4",
     ],
+    // 当前视频
     src: "",
+    // 顶部导航
     type: ['深圳', '关注', '推荐'],
+    // 当前顶部导航索引
     currentType: 2,
+    // 评论状态
     currentStatu: 'close',
+    // 打开/关闭评论
     showModalStatus: false,
+    // 评论打开/关闭动画
     animationData: {}
   }
 
+  // 上下切换短视频
   switchVideo(e) {
-    console.log("bindchange", e.detail.current)
     let i = e.detail.current
     this.setState({
       src: this.state.list[i],
     })
   }
 
+  // 左右滑动切换导航
   switchType(e) {
     console.log("bindchange", e.detail.current)
     let i = e.detail.current
@@ -77,6 +85,7 @@ class Index extends Component<IProps> {
     })
   }
 
+  // 点击切换导航
   onTapType(index) {
     let i = index
     this.setState({
@@ -85,6 +94,7 @@ class Index extends Component<IProps> {
     })
   }
 
+  // 打开抽屉
   onShowDrawer() {
     const { currentStatu } = this.state
 
@@ -165,6 +175,7 @@ class Index extends Component<IProps> {
                       return (
                         <Block key={index}>
                           <SwiperItem>
+                            {/* 短视频模块 */}
                             <VideoWrap item={item} onShowDrawer={this.onShowDrawer.bind(this)}></VideoWrap>
                           </SwiperItem>
                         </Block>
@@ -176,6 +187,7 @@ class Index extends Component<IProps> {
             )
           })}
         </Swiper>
+        {/* 评论抽屉 */}
         <CommentDrawer animationData={animationData} showModalStatus={showModalStatus} onShowDrawer={this.onShowDrawer.bind(this)} />
       </View>
     )

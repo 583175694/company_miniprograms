@@ -1,3 +1,4 @@
+import Taro from '@tarojs/taro'
 import { Component } from "react"
 import { connect } from "react-redux"
 import { View, Text, Image, Video } from "@tarojs/components"
@@ -23,9 +24,15 @@ type PageOwnProps = {
 type State = {}
 
 type IProps = StateProps & DispatchProps & PageOwnProps
-
 class VideoWrap extends Component<IProps> {
   state: State = {}
+
+  // 跳转福利页
+  toWelfare() {
+    Taro.navigateTo({
+      url: '/pages/welfare/index'
+    })
+  }
 
   render() {
     return (
@@ -48,7 +55,7 @@ class VideoWrap extends Component<IProps> {
 
         {/* 右侧操作 */}
         <View className="operation">
-          <View className="operation-item">
+          <View className="operation-item" onClick={this.toWelfare.bind(this)}>
             <Image src={iconGift} />
             <Text>领福利</Text>
           </View>
