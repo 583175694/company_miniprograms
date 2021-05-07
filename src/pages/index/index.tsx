@@ -1,17 +1,17 @@
-import Taro from "@tarojs/taro"
-import { Component } from "react"
-import { connect } from "react-redux"
-import {  Block,  Swiper,  SwiperItem,  View, Image, Text } from "@tarojs/components"
-import { RootState } from "../../core/reducers"
-import { ThunkDispatch } from "redux-thunk"
-import { AnyAction } from "redux"
+import Taro from '@tarojs/taro'
+import { Component } from 'react'
+import { connect } from 'react-redux'
+import {  Block,  Swiper,  SwiperItem,  View, Image, Text } from '@tarojs/components'
+import { ThunkDispatch } from 'redux-thunk'
+import { AnyAction } from 'redux'
+import { RootState } from '../../core/reducers'
 import VideoWrap from '../../components/VideoWrap'
 import CommentDrawer from '../../components/CommentDrawer'
-import { getTabbarState } from "../../core/actions/home"
+import { getTabbarState } from '../../core/actions/home'
 
-import "./index.scss"
+import './index.scss'
 
-import iconSearch from "../../assets/icon_search.svg"
+import iconSearch from '../../assets/icon_search.svg'
 
 type StateProps = {}
 
@@ -22,10 +22,7 @@ type DispatchProps = {
 type PageOwnProps = {}
 
 type State = {
-  videoSrc: string
   list: Array<string>
-  list2: Array<string>
-  list3: Array<string>
   type: Array<string>
   src: string
   currentType: number
@@ -38,23 +35,12 @@ type IProps = StateProps & DispatchProps & PageOwnProps
 
 class Index extends Component<IProps> {
   state: State = {
-    // 视频列表
-    videoSrc:
-      "https://pressure-1255704943.cos.ap-shanghai.myqcloud.com/prod/download/VideoBackForth3.mp4",
     list: [
-      "https://pressure-1255704943.cos.ap-shanghai.myqcloud.com/prod/download/VideoBackForth3.mp4",
-      "https://pressure-1255704943.cos.ap-shanghai.myqcloud.com/prod/download/gaitVideoExample.mp4",
-    ],
-    list2: [
-      "https://pressure-1255704943.cos.ap-shanghai.myqcloud.com/prod/download/VideoBackForth3.mp4",
-      "https://pressure-1255704943.cos.ap-shanghai.myqcloud.com/prod/download/gaitVideoExample.mp4",
-    ],
-    list3: [
-      "https://pressure-1255704943.cos.ap-shanghai.myqcloud.com/prod/download/VideoBackForth3.mp4",
-      "https://pressure-1255704943.cos.ap-shanghai.myqcloud.com/prod/download/gaitVideoExample.mp4",
+      'https://pressure-1255704943.cos.ap-shanghai.myqcloud.com/prod/download/VideoBackForth3.mp4',
+      'https://pressure-1255704943.cos.ap-shanghai.myqcloud.com/prod/download/gaitVideoExample.mp4',
     ],
     // 当前视频
-    src: "",
+    src: '',
     // 顶部导航
     type: ['深圳', '关注', '推荐'],
     // 当前顶部导航索引
@@ -67,8 +53,12 @@ class Index extends Component<IProps> {
     animationData: {}
   }
 
+  componentDidUpdate() {
+    console.log(this.state.src)
+  }
+
   // 上下切换短视频
-  switchVideo(e) {
+  switchVideo(e: any) {
     let i = e.detail.current
     this.setState({
       src: this.state.list[i],
@@ -77,7 +67,7 @@ class Index extends Component<IProps> {
 
   // 左右滑动切换导航
   switchType(e) {
-    console.log("bindchange", e.detail.current)
+    console.log('bindchange', e.detail.current)
     let i = e.detail.current
     this.setState({
       src: this.state.list[i],
@@ -110,7 +100,7 @@ class Index extends Component<IProps> {
   util(currentStatu) {
     var animation = Taro.createAnimation({
       duration: 200,  //  动画时长
-      timingFunction: "ease", //  线性
+      timingFunction: 'ease', //  线性
       delay: 0  //  0则不延迟
     })
 
@@ -126,7 +116,7 @@ class Index extends Component<IProps> {
       })
 
       //关闭抽屉
-      if (currentStatu == "close") {
+      if (currentStatu == 'close') {
         this.setState({
           showModalStatus: false
         })
@@ -134,7 +124,7 @@ class Index extends Component<IProps> {
     }.bind(this), 200)
 
     // 显示抽屉
-    if (currentStatu == "open") {
+    if (currentStatu == 'open') {
       this.setState({
         showModalStatus: true
       })
@@ -144,36 +134,36 @@ class Index extends Component<IProps> {
   render() {
     const { list, type, currentType, showModalStatus, animationData } = this.state
     return (
-      <View className="index">
+      <View className='index'>
         {/* 顶部导航 */}
-        <View className="top-nav">
+        <View className='top-nav'>
           <Image src={iconSearch} />
           {type.map((res, index) => {
-            return <View className="top-nav-item" onClick={this.onTapType.bind(this, index)}><Text>{res}</Text></View>
+            return <View className='top-nav-item' onClick={this.onTapType.bind(this, index)}><Text>{res}</Text></View>
           })}
         </View>
 
         {/* 滚动视频 */}
         <Swiper
-            className="swiper-type"
-            easingFunction="default"
-            current={currentType}
-            onChange={this.switchType.bind(this)}
+          className='swiper-type'
+          easingFunction='default'
+          current={currentType}
+          onChange={this.switchType.bind(this)}
         >
-          {type.map((res, index) => {
+          {type.map((res) => {
             return (
-              <Block>
+              <Block key={res}>
                 <SwiperItem>
                   <Swiper
-                    className="swiper"
-                    vertical={true}
-                    circular={true}
-                    easingFunction="default"
+                    className='swiper'
+                    vertical
+                    circular
+                    easingFunction='default'
                     onChange={this.switchVideo.bind(this)}
                   >
-                    {list.map((item, index) => {
+                    {list.map((item) => {
                       return (
-                        <Block key={index}>
+                        <Block key={item}>
                           <SwiperItem>
                             {/* 短视频模块 */}
                             <VideoWrap item={item} onShowDrawer={this.onShowDrawer.bind(this)}></VideoWrap>

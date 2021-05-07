@@ -2,16 +2,15 @@ import Taro from '@tarojs/taro'
 import { Component } from 'react'
 import { connect } from 'react-redux'
 import { View, Text, Image } from '@tarojs/components'
-import { RootState } from '../../core/reducers'
 import { ThunkDispatch } from 'redux-thunk'
 import { AnyAction } from 'redux'
+import { RootState } from '../../core/reducers'
 import './index.scss'
 import avatar from '../../assets/img_avatar.png'
 import url1 from '../../assets/iPhone12.png'
 import url2 from '../../assets/iPhone12-2.png'
 import url3 from '../../assets/ipad.png'
 import url4 from '../../assets/airTags.png'
-import url5 from '../../assets/iPhone12.png'
 
 type StateProps = {}
 
@@ -32,7 +31,7 @@ class Welfare extends Component<IProps> {
       list: [{
         title: 'Apple 中国官方',
         subtitle: 'Apple 中国官方',
-        url: url1
+        url: url3
       }, {
         title: 'Apple 中国官方',
         subtitle: 'Apple 中国官方',
@@ -40,6 +39,18 @@ class Welfare extends Component<IProps> {
       }, {
         title: 'Apple 中国官方',
         subtitle: 'Apple 中国官方',
+        url: url1
+      }, {
+        title: 'Apple 中国官方',
+        subtitle: 'Apple 中国官方',
+        url: url4
+      }, {
+        title: 'Apple 中国官方',
+        subtitle: 'Apple 中国官方',
+        url: url1
+      }, {
+        title: 'Apple 中国官方',
+        subtitle: 'Apple 中国官方',
         url: url3
       }, {
         title: 'Apple 中国官方',
@@ -48,19 +59,7 @@ class Welfare extends Component<IProps> {
       }, {
         title: 'Apple 中国官方',
         subtitle: 'Apple 中国官方',
-        url: url5
-      }, {
-        title: 'Apple 中国官方',
-        subtitle: 'Apple 中国官方',
-        url: url3
-      }, {
-        title: 'Apple 中国官方',
-        subtitle: 'Apple 中国官方',
-        url: url4
-      }, {
-        title: 'Apple 中国官方',
-        subtitle: 'Apple 中国官方',
-        url: url5
+        url: url1
       }]
     }
 
@@ -78,34 +77,35 @@ class Welfare extends Component<IProps> {
       const { containerHeight, list } = this.state
       return (
         <View className='welfare'>
-          <View className="banner">
-            <View className="mask"></View>
+          <View className='banner'>
+            <View className='mask'></View>
           </View>
-          <Image className="c-avatar" src={avatar}></Image>
-          <View className="container" style={{'height': containerHeight}}>
-            <Text className="c-name">Apple 中国官方</Text>
+          <Image className='c-avatar' src={avatar}></Image>
+          <View className='container' style={{'height': containerHeight}}>
+            <Text className='c-name'>Apple 中国官方</Text>
             {list && list.map((res: any, index: number) => {
               return (
                 index === 0 ?
                 // 第一条数据
-                <View className="welfare-item-first" style={{'backgroundImage': `url(${res.url})`}}>
-                  <View className="mask"></View>
-                  <View className="title">
+                <View className='welfare-item-first'>
+                  <Image className='first-bg' src={res.url} mode='aspectFill'></Image>
+                  <View className='mask'></View>
+                  <View className='title'>
                     <Text>{res.title}</Text>
                     <Text>{res.subtitle}</Text>
                   </View>
-                  <View className="receive">
+                  <View className='receive'>
                     <Text>领取</Text>
                   </View>
                 </View> :
                 // 其他数据
-                <View className="welfare-item">
-                  <Image className="w-avatar" src={res.url}></Image>
-                  <View className="title">
+                <View className='welfare-item'>
+                  <Image className='w-avatar' src={res.url}></Image>
+                  <View className='title'>
                     <Text>{res.title}</Text>
                     <Text>{res.subtitle}</Text>
                   </View>
-                  <View className="receive">
+                  <View className='receive'>
                     <Text>领取</Text>
                   </View>
                 </View>

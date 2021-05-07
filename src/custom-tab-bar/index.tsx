@@ -2,9 +2,9 @@ import { Component } from 'react'
 import Taro from '@tarojs/taro'
 import { View, Image, Block } from '@tarojs/components'
 import { connect } from 'react-redux'
-import { RootState } from '../core/reducers'
 import { ThunkDispatch } from 'redux-thunk'
 import { AnyAction } from 'redux'
+import { RootState } from '../core/reducers'
 import './index.scss'
 import { getTabbarState } from '../core/actions/home'
 
@@ -58,7 +58,7 @@ class customTabBar extends Component<IProps> {
           {this.state.list.map((item, index) => {
             return (
               <View className='bottom-tab-item' onClick={this.switchTab.bind(this, item, index)} data-path={item.pagePath} key={item.text}>
-                <Image className={`bottom-tab-item-img ${showTabbar === index && 'active'}`} src={showTabbar === index ? item.selectedIconPath : item.iconPath}/>
+                <Image className={`bottom-tab-item-img ${showTabbar === index && 'active'}`} src={showTabbar === index ? item.selectedIconPath : item.iconPath} />
                 <View className='bottom-tab-item-text' style={{ color: this.state.selected === index ? this.state.selectedColor : this.state.color, }} >
                   {item.text}
                 </View>
